@@ -10,7 +10,19 @@ library(tidyverse)
 Import data
 
 ```{r}
-litters_df = read_csv(file = "./data/FAS_litters.csv")
+litters_df = read_csv(
+  file = "./data/FAS_litters.csv",
+  na = c(".", "NA", ""))
+
+pups_df = read_csv(
+  file ="./data/FAS_litters.csv",
+  na = c(".", "NA", ""))
+
+names(litters_df)
+litters_df = janitor::clean_names(litters_df)
+names(litters_df)
+
+skimr::skim(litters_df)
 ```
 
 
