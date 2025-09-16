@@ -1,0 +1,16 @@
+---
+title: "Data wrangling"
+output: github_document
+---
+
+```{r echo=TRUE, message=FALSE}
+library(tidyverse)
+```
+
+Import data
+
+```{r}
+litters_df = read_csv(file = "./data/FAS_litters.csv")
+```
+
+
