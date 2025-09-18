@@ -1,0 +1,29 @@
+---
+title: "Data Manipulation"
+output: github_document
+---
+
+```{r echo=TRUE, message=FALSE}
+library(tidyverse)
+```
+
+Import data
+
+```{r}
+litters_df = read_csv(
+  file = "./data/FAS_litters.csv",
+  na = c(".", "NA", ""))
+litters_df = 
+  janitor::clean_names(litters_df)
+
+pups_df = read_csv(
+  file ="./data/FAS_litters.csv",
+  skip  = 3,
+  na = c(".", "NA", ""))
+pups_df =
+  janitor::clean_names(pups_df)
+
+skimr::skim(litters_df)
+```
+
+
